@@ -150,3 +150,16 @@ REST_FRAMEWORK = {
 
     'PAGE_SIZE': 10
 }
+
+EXTRA_LANG_INFO = {
+    'ms': {
+        'bidi': False,
+        'code': 'ms',
+        'name': 'malay',
+        'name_local': 'bahasa melayu'
+    }
+}
+
+import django.conf.locale
+LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
+django.conf.locale.LANG_INFO = LANG_INFO
